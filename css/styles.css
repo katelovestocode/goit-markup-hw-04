@@ -18,6 +18,7 @@
   --third-bcg-color: #f5f4fa;
   --button-hover-color: #188ce8;
   --border-color: #ececec;
+  --icons-border-and-fill: #afb1b8;
   --margin-gap: 30px;
 }
 
@@ -28,7 +29,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* General Styles */
+/* -------- General Styles ---------- */
 .list {
   list-style: none;
   padding: 0;
@@ -52,7 +53,7 @@ img {
   height: auto;
 }
 
-/* Logo */
+/* ---------- Logo ----------- */
 .logo {
   color: var(--accent-blue-color);
   font-family: Raleway, sans-serif;
@@ -68,7 +69,7 @@ img {
   color: var(--white-color);
 }
 
-/* Header */
+/* ------- Header --------- */
 header {
   border: solid var(--border-color);
   border-width: 0 0 1px 0;
@@ -92,7 +93,7 @@ header {
   align-items: center;
 }
 
-/* Site Navigation */
+/* ------- Site Navigation --------- */
 .site-nav {
   display: flex;
   margin-left: 93px;
@@ -122,18 +123,21 @@ header {
   color: var(--accent-blue-color);
 }
 
-/* Contact */
+/* --------- Contact ---------- */
 .contact {
   display: flex;
   margin-left: auto;
 }
 
-.contact .item + .item {
+.item + .item {
   margin-left: 50px;
 }
 
-.contact-email,
-.contact-number {
+.contact-link {
+  display: flex;
+  align-items: center;
+}
+.contact-info {
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -141,20 +145,35 @@ header {
   letter-spacing: 0.02em;
   text-decoration: none;
 }
-.contact-email:hover,
-.contact-number:hover {
-  color: var(--accent-blue-color);
-}
-.contact-email:focus,
-.contact-number:focus {
+.contact-info:hover,
+.contact-info:focus {
   color: var(--accent-blue-color);
 }
 
-/* Hero */
+.contact-link-icon {
+  margin-right: 10px;
+  fill: var(--secondary-text-color);
+}
+.contact-link-icon:hover,
+.contact-link-icon:focus {
+  fill: var(--accent-blue-color);
+}
+
+/* --------- Hero ---------- */
 .hero {
   text-align: center;
   padding: 200px 0;
   background-color: var(--secondary-dark-bcg-color);
+
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/resized/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-title {
   color: var(--white-color);
@@ -166,7 +185,7 @@ header {
   text-transform: uppercase;
 }
 
-/* Button */
+/* -------- Button ---------- */
 
 button {
   border: none;
@@ -207,7 +226,7 @@ button {
   padding-top: 94px;
 }
 
-/* Features */
+/*--------- Features -------- */
 .features-list {
   display: flex;
   justify-content: space-between;
@@ -241,6 +260,15 @@ button {
   margin-top: -1px;
 }
 
+.features-icon-box {
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--third-bcg-color);
+  padding: 25px 100px;
+  margin-bottom: var(--margin-gap);
+}
+
 /* What We Do */
 .examples-list {
   display: flex;
@@ -250,7 +278,7 @@ button {
   margin-left: var(--margin-gap);
 }
 
-/* Our Team */
+/* ------- Our Team -------- */
 .team {
   background-color: var(--third-bcg-color);
 }
@@ -292,7 +320,38 @@ button {
   line-height: 1.18;
 }
 
-/* H2 Headings */
+.social-icons-team {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.social-item {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+}
+
+.social-icons {
+  fill: var(--icons-border-and-fill);
+}
+.social-item:hover,
+.social-item:focus {
+  background-color: var(--accent-blue-color);
+}
+
+.social-icons:hover,
+.social-icons:focus {
+  fill: var(--white-color);
+}
+
+.social-item + .social-item {
+  margin-left: 10px;
+}
+
+/* -------- H2 Headings -------- */
 .section-title {
   margin-bottom: 50px;
 
@@ -302,7 +361,33 @@ button {
   text-align: center;
 }
 
-/* Footer */
+/* ---------- Clients --------- */
+.client {
+  display: flex;
+  margin-top: 50px;
+}
+
+.client-link {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icons-border-and-fill);
+  border-radius: 4px;
+  padding: 16px 32px;
+  fill: var(--icons-border-and-fill);
+}
+
+.client-link + .client-link {
+  margin-left: var(--margin-gap);
+}
+
+.client-link:hover,
+.client-link:focus {
+  fill: var(--accent-blue-color);
+  border-color: var(--accent-blue-color);
+}
+
+/* --------- Footer ----------- */
+
 footer {
   padding: 60px 0;
   background-color: var(--secondary-dark-bcg-color);
@@ -318,28 +403,67 @@ footer {
   font-style: normal;
   text-decoration: none;
 }
-.address-email,
-.address-number {
+.address-info {
   color: var(--footer-text-color);
   font-size: 14px;
   line-height: 1.71;
   font-style: normal;
 }
-.address-email:hover,
-.address-number:hover {
-  color: var(--accent-blue-color);
-}
-.address-email:focus,
-.address-number:focus {
+.address-info:hover,
+.address-info:focus {
   color: var(--accent-blue-color);
 }
 
-/* Portfolio */
+.footer-box {
+  display: flex;
+  align-items: baseline;
+}
+
+.box2 > .title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.box2 {
+  margin-left: 70px;
+}
+
+.social-bottom {
+  display: flex;
+  margin-top: 20px;
+}
+.social-items {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-items:hover,
+.social-items:focus {
+  background-color: var(--accent-blue-color);
+}
+
+.social-items + .social-items {
+  margin-left: 10px;
+}
+
+.social-icon {
+  fill: var(--white-color);
+}
+
+/* ----------- Portfolio -----------*/
 a {
   text-decoration: none;
 }
 
-/* Filter buttons */
+/* ------- Filter buttons ---------- */
 .buttons-filter {
   display: flex;
   justify-content: center;
@@ -375,7 +499,7 @@ a {
   color: var(--white-color);
 }
 
-/* Card-Set */
+/* ------ Card-Set ------- */
 
 .card-set {
   display: flex;
